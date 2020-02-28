@@ -15,7 +15,7 @@ Python version 3.x & the followings packages:
 - sklearn==0.22
 - SQLAlchemy==1.3.13
 
-You can then run the .py files "process_data.py" & "train_classifier.py" in your terminal with these commands (for example):
+You can then run the .py files "process_data.py" & "train_classifier.py" in your terminal with the following commands (for example):
 
   python process_data.py ./data/disaster_messages.csv ./data/disaster_categories.csv DisasterResponse.db
   
