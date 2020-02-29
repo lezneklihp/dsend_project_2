@@ -20,7 +20,7 @@ def load_data(messages_filepath, categories_filepath):
     df_categories = pd.read_csv(categories_filepath)
     df = df_messages.merge(df_categories, on="id")
     df.info()
-    
+
     return df_categories, df
 
 def clean_data(df_categories, df):
@@ -63,6 +63,9 @@ def clean_data(df_categories, df):
     # Search for duplicated entries
     if len(df[df.duplicated()]) != 0:
         df.drop_duplicates(ignore_index=True, inplace=True)
+
+    # Convert category columns with floats to integers
+    df.iloc[:, 3:] = df.iloc[:, 3:].astype(int)
 
     return df
 
