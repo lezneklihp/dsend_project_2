@@ -65,7 +65,8 @@ def clean_data(df_categories, df):
         df.drop_duplicates(ignore_index=True, inplace=True)
 
     # Convert category columns with floats to integers
-    df.iloc[:, 3:] = df.iloc[:, 3:].astype(int)
+    df.iloc[:, 4:] = df.iloc[:, 4:].astype(int)
+    df.info()
 
     return df
 
