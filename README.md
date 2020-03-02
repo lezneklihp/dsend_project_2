@@ -42,6 +42,10 @@ The idea behind this project is thus to analyze and to categorize Twitter messag
 "weighted" accounts for class imbalance by computing the average of binary metrics in which each class’s score is weighted by its presence in the true data sample.
 "micro" gives each sample-class pair an equal contribution to the overall metric (except as a result of sample-weight). Rather than summing the metric per class, this sums the dividends and divisors that make up the per-class metrics to calculate an overall quotient. Micro-averaging may be preferred in multilabel settings, including multiclass classification where a majority class is to be ignored." (https://scikit-learn.org/stable/modules/model_evaluation.html#average)
 
+"The 1’s in each row denote the positive classes a sample has been labelled with." (https://scikit-learn.org/stable/modules/multiclass.html)
+
+"F1 score of the positive class in binary classification or weighted average of the F1 scores of each class for the multiclass task." (https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html)
+
 ## Summary of results:<a name="Summary_of_results"></a>
 work in progress
 
