@@ -2,6 +2,7 @@
 - [Repository content](#Repository_content)
 - [Software requirements](#Software_requirements)
 - [Motivation](#Motivation)
+- [Task](#Task)
 - [Summary of results](#Summary_of_results)
 - [Acknowledgements & licensing](#Acknowledgements)
 
@@ -25,6 +26,21 @@ You can then run the .py files "process_data.py" & "train_classifier.py" in your
 Twitter allows its users to share concerns with the public. In the case of an emergency, making others aware of a problem can potentially save lifes. When time is short, however, it could turn out to be challenging to interpret many Twitter messages quickly.
 
 The idea behind this project is thus to analyze and to categorize Twitter messages. Thereby rescuers can understand faster how to help people in need. This idea has been originally suggested by Figure Eight Inc.
+
+## Task:<a name="Task"></a>
+"Multilabel Classification [...] This can be thought of as predicting properties of a sample that are not mutually exclusive."(https://scikit-learn.org/stable/modules/multiclass.html)
+
+"multilabel data is specified as an indicator matrix, in which cell [i, j] has value 1 if sample i has label j and value 0 otherwise." (https://scikit-learn.org/stable/modules/model_evaluation.html#average)
+
+"In multiclass and multilabel classification task, the notions of precision, recall, and F-measures can be applied to each label independently. There are a few ways to combine results across labels, specified by the average argument to the average_precision_score (multilabel only), f1_score, fbeta_score, precision_recall_fscore_support, precision_score and recall_score functions, as described above. Note that if all labels are included, “micro”-averaging in a multiclass setting will produce precision, recall and  that are all identical to accuracy. Also note that “weighted” averaging may produce an F-score that is not between precision and recall.".(https://scikit-learn.org/stable/modules/model_evaluation.html)
+
+"In other words, precision is the proportion of the predicted items that are relevant, and recall is the proportion of the relevant items that are correctly predicted." (p.231, mlandsecurity)
+
+"A measurement can be accurate yet not precise, not accurate but still precise, neither accurate nor precise, or both accurate and precise. We consider a measurement to be valid if it is both accurate and precise." (p.39, deep learning)
+
+""macro" simply calculates the mean of the binary metrics, giving equal weight to each class. In problems where infrequent classes are nonetheless important, macro-averaging may be a means of highlighting their performance. On the other hand, the assumption that all classes are equally important is often untrue, such that macro-averaging will over-emphasize the typically low performance on an infrequent class.
+"weighted" accounts for class imbalance by computing the average of binary metrics in which each class’s score is weighted by its presence in the true data sample.
+"micro" gives each sample-class pair an equal contribution to the overall metric (except as a result of sample-weight). Rather than summing the metric per class, this sums the dividends and divisors that make up the per-class metrics to calculate an overall quotient. Micro-averaging may be preferred in multilabel settings, including multiclass classification where a majority class is to be ignored." (https://scikit-learn.org/stable/modules/model_evaluation.html#average)
 
 ## Summary of results:<a name="Summary_of_results"></a>
 work in progress
