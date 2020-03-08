@@ -13,7 +13,7 @@ def load_data(messages_filepath, categories_filepath):
 
     :return: pandas.core.frame.DataFrame
 
-    >>> df_categories, df = load_data('/data/messages.csv', /data/categories.csv')
+    >>> df_categories, df = load_data('data/messages.csv', 'data/categories.csv')
     """
 
     df_messages = pd.read_csv(messages_filepath)
@@ -36,7 +36,7 @@ def clean_data(df_categories, df):
     """
 
     # Create & clean the information on disaster categories
-    df_categories = df_categories.categories.str.split(';', expand=True)
+    df_categories = df_categories['categories'].str.split(';', expand=True)
     labels = df_categories.iloc[0,:]
     category_colnames = labels.replace(r'-[0-9]', '', regex=True).tolist()
     df_categories.columns = category_colnames
@@ -44,10 +44,9 @@ def clean_data(df_categories, df):
     for column in df_categories:
         df_categories[column] = df_categories[column].astype(int)
 
-    # Replace previous information on disaster categories
-    df.drop(columns='categories', inplace=True)
+    # Remove original messages & replace previous information on disaster categories
+    df.drop(columns=['original', 'categories'], axis=1, inplace=True)
     df = pd.concat([df, df_categories], axis=1, ignore_index=False, sort=False)
-    df.info()
 
     # Replace observations in disaster categories which are greater than 1,
     # assuming there were no greater values than 2
@@ -83,7 +82,7 @@ def save_data(df, database_filename):
     """
 
     connection = create_engine(''.join(['sqlite:///', database_filename]))
-    df.to_sql('categorized_messages', connection, index=False)
+    df.to_sql('categorized_messages', connection, if_exists='replace', index=False)
 
 def main():
     if len(sys.argv) == 4:

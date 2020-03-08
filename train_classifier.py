@@ -1,15 +1,3 @@
-# For the machine learning portion, you will split the data into a training set and a test set.
-# Then, you will create a machine learning pipeline that uses NLTK, as well as scikit-learn's
-# Pipeline and GridSearchCV to output a final model that uses the message column to predict
-# classifications for 36 categories (multi-output classification). Finally, you will export
-# your model to a pickle file. After completing the notebook, you'll need to include your
-# final machine learning code in train_classifier.py
-
-import pandas as pd
-from sqlalchemy import create_engine
-import sys
-from joblib import Parallel
-
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem.wordnet import WordNetLemmatizer
@@ -22,12 +10,16 @@ import sklearn
 from sklearn.ensemble import AdaBoostClassifier, RandomForestClassifier
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import accuracy_score, classification_report, f1_score
-from sklearn.model_selection import cross_val_score, GridSearchCV, train_test_split
+from sklearn.model_selection import GridSearchCV, train_test_split
 from sklearn.multioutput import MultiOutputClassifier
 from sklearn.pipeline import make_pipeline
 from sqlalchemy import create_engine
+import sys
 from nltk.stem.porter import PorterStemmer
 
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
 
 def load_database_data(database_filename):
     """Loads data from a SQLite database to a Pandas dataframe & splits the data
@@ -43,7 +35,7 @@ def load_database_data(database_filename):
     connection = create_engine(''.join(['sqlite:///', database_filename]))
     df = pd.read_sql_query('SELECT * FROM categorized_messages', connection)
     X = df['message'].values
-    y = df.iloc[:, 4:]
+    y = df.iloc[:, 6:]
     category_names = list(y.columns)
 
     return X, y, category_names
@@ -74,11 +66,8 @@ def tokenize(corpus):
     # Replace all symbols
     words_all = re.sub(r"[^a-zA-Z0-9]", " ", words_all, flags=re.I)
 
-    # another tokenization (also to get rid of breaks)
-    #words_all = word_tokenize(words_all)
-
-    # stemming words
-    #words_all = [PorterStemmer().stem(word) for word in words_all]
+    # Stem words
+    words_all = [PorterStemmer().stem(word) for word in words_all]
 
     # Lemmatize words
     words_all_new = [WordNetLemmatizer().lemmatize(word) for word in words_all]
@@ -86,17 +75,34 @@ def tokenize(corpus):
     return words_all_new
 
 def build_model():
-    pipeline = make_pipeline(TfidfVectorizer(tokenizer=tokenize, smooth_idf=False),
-                    MultiOutputClassifier(RandomForestClassifier()))
+    """Instantiates a machine learning pipeline with a AdaBoostClassifier.
 
-    parameters_dict = dict(multioutputclassifier__estimator__criterion=['entropy'],
-                            multioutputclassifier__estimator__n_estimators=[600])
+    :return: sklearn.pipeline.Pipeline
 
-    model = Parallel(n_jobs=-1)GridSearchCV(pipeline, param_grid=parameters_dict, cv=5, verbose=3)
+    >>> model = build_model()
+    """
+
+    model = make_pipeline(
+                    TfidfVectorizer(
+                                    tokenizer=tokenize,
+                                    smooth_idf=False),
+                    MultiOutputClassifier(
+                                    AdaBoostClassifier(),
+                    n_jobs=-1))
 
     return model
 
 def evaluate_model(model, X_test, y_test, category_names):
+    """Creates a report on how well the pipeline is able to categorize data.
+
+    :param model: sklearn.pipeline.Pipeline
+    :param X_test: numpy.ndarray
+    :param y_test: pandas.core.frame.DataFrame
+    :param category_names: list
+
+    >>> evaluate_model(model, X_test, Y_test, category_names)
+    """
+
     y_pred = model.predict(X_test)
 
     for col in range(len(category_names)):
@@ -107,11 +113,18 @@ def evaluate_model(model, X_test, y_test, category_names):
         print("F1-score (micro):", f1_score(y_test.iloc[:,col], y_pred[:,col], labels=np.unique(y_pred), average='micro'))
         print("F1-score (macro):", f1_score(y_test.iloc[:,col], y_pred[:,col], labels=np.unique(y_pred), average='macro'))
         print("F1-score (weighted):", f1_score(y_test.iloc[:,col], y_pred[:,col], labels=np.unique(y_pred), average='weighted'))
-        print("F1-score (samples):", f1_score(y_test.iloc[:,col], y_pred[:,col], labels=np.unique(y_pred), average='samples'), "\n")
         print("Accuracy score:", accuracy_score(y_test.iloc[:,col], y_pred[:,col]))
 
 
 def save_model(model, model_filepath):
+    """Saves the current, trained pipeline to a pickle file.
+
+    :param model: sklearn.pipeline.Pipeline
+    :param model_filepath: str
+
+    >>> evaluate_model(model, 'models/classifier.pkl')
+    """
+
     pickle.dump(model, open(model_filepath, 'wb'))
 
 
@@ -140,7 +153,7 @@ def main():
         print('Please provide the filepath of the disaster messages database '\
               'as the first argument and the filepath of the pickle file to '\
               'save the model to as the second argument. \n\nExample: python '\
-              'train_classifier.py ../data/DisasterResponse.db classifier.pkl')
+              'train_classifier.py data/DisasterResponse.db models/classifier.pkl')
 
 
 if __name__ == '__main__':
