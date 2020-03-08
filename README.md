@@ -9,6 +9,23 @@
 ## Repository content:<a name="Repository_content"></a>
 This repository includes .py files for the second project of the Udacity Data Scientist for Enterprise Nanodegree.
 
+```bash
+.
+├── data
+│   ├── DisasterResponse.db
+│   ├── disaster_categories.csv
+│   └── disaster_messages.csv
+├── models
+│   └── classifier.pkl
+├── process_data.py
+├── train_classifier.py
+└── webapp
+    ├── run.py
+    └── templates
+        ├── go.html
+        └── master.html
+```
+
 ## Software requirements:<a name="Software_requirements"></a>
 Python version 3.x & the followings packages:
 - numpy==1.18.1
@@ -16,11 +33,21 @@ Python version 3.x & the followings packages:
 - sklearn==0.22
 - SQLAlchemy==1.3.13
 
-You can then run the .py files "process_data.py" & "train_classifier.py" in your terminal with the following commands (for example):
-
-  python process_data.py ./data/disaster_messages.csv ./data/disaster_categories.csv DisasterResponse.db
+Assuming that your current working directory is home (i.e., data, webapp, models are all subdirectories one level below), you can then run the .py files "process_data.py" & "train_classifier.py" in your terminal with the following commands. For example:
   
-  python train_classifier.py
+  ```bash
+  python process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
+  ```
+  
+  ```bash
+  python train_classifier.py data/DisasterResponse.db models/classifier.pkl
+  ```
+  
+  ```bash
+  python webapp/run.py
+  ```
+
+Note: You might need to adjust the paths to run these .py files.
 
 ## Motivation:<a name="Motivation"></a>
 Twitter allows its users to share concerns with the public. In the case of an emergency, making others aware of a problem can potentially save lifes. When time is short, however, it could turn out to be challenging to interpret many Twitter messages quickly.
