@@ -3,7 +3,8 @@
 - [Software requirements](#Software_requirements)
 - [Motivation](#Motivation)
 - [Task](#Task)
-- [How to run](#How_to_run)
+- [How to run locally](#How_to_run)
+- [How to run locally in a Docker container](#How_to_run_with_docker)
 - [Summary of results](#Summary_of_results)
 - [Acknowledgements & licensing](#Acknowledgements)
 
@@ -58,22 +59,39 @@ The idea behind this project is thus to analyze and to categorize Twitter messag
 
 "F1 score of the positive class in binary classification or weighted average of the F1 scores of each class for the multiclass task." (https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html)
 
-## How to run:<a name="How_to_run"></a>
-Assuming that your current working directory is home (i.e., data, webapp, models are all subdirectories one level below), you can then run the .py files "process_data.py", "train_classifier.py", & "run.py" in your terminal with the following commands. For example:
+## How to run locally:<a name="How_to_run"></a>
+Clone the repository to a directory. When you then change directory into the git repository, let's call the directory of this git repository "home".
+
+Now assuming that your current working directory is home (i.e., data, webapp, models are all subdirectories one level below), you can then run the .py files "process_data.py", "train_classifier.py", & "run.py" in your terminal with the following commands. For example:
   
-  ```bash
-  python process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
-  ```
+    ```bash
+    python process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
+    ```
   
-  ```bash
-  python train_classifier.py data/DisasterResponse.db models/classifier.pkl
-  ```
+    ```bash
+    python train_classifier.py data/DisasterResponse.db models/classifier.pkl
+    ```
   
-  ```bash
-  python webapp/run.py
-  ```
+    ```bash
+    python webapp/run.py
+    ```
 
 Note: You might need to adjust the paths to run these .py files.
+
+## How to run locally in a Docker container:<a name="How_to_run_with_docker"></a>
+Clone the repository to a directory. Change directory to the git repository. There execute the follwing Docker commands to create a Docker image called "dsend-2". Specify the ports (if you don't want to access the Flask app on port 5001).
+
+    ```bash
+    docker build -t dsend-2 .
+    ```
+    
+    ```bash
+    docker run -it --rm --name my-app dsend-2:latest
+    ```
+    
+    ```bash
+    docker run -d -p 3001:5001 dsend-2:latest
+    ```
 
 ## Summary of results:<a name="Summary_of_results"></a>
 work in progress
