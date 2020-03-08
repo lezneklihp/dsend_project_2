@@ -3,6 +3,7 @@
 - [Software requirements](#Software_requirements)
 - [Motivation](#Motivation)
 - [Task](#Task)
+- [How to run](#How_to_run)
 - [Summary of results](#Summary_of_results)
 - [Acknowledgements & licensing](#Acknowledgements)
 
@@ -33,22 +34,6 @@ Python version 3.x & the followings packages:
 - sklearn==0.22
 - SQLAlchemy==1.3.13
 
-Assuming that your current working directory is home (i.e., data, webapp, models are all subdirectories one level below), you can then run the .py files "process_data.py", "train_classifier.py", & "run.py" in your terminal with the following commands. For example:
-  
-  ```bash
-  python process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
-  ```
-  
-  ```bash
-  python train_classifier.py data/DisasterResponse.db models/classifier.pkl
-  ```
-  
-  ```bash
-  python webapp/run.py
-  ```
-
-Note: You might need to adjust the paths to run these .py files.
-
 ## Motivation:<a name="Motivation"></a>
 Twitter allows its users to share concerns with the public. In the case of an emergency, making others aware of a problem can potentially save lifes. When time is short, however, it could turn out to be challenging to interpret many Twitter messages quickly.
 
@@ -72,6 +57,23 @@ The idea behind this project is thus to analyze and to categorize Twitter messag
 "The 1’s in each row denote the positive classes a sample has been labelled with." (https://scikit-learn.org/stable/modules/multiclass.html)
 
 "F1 score of the positive class in binary classification or weighted average of the F1 scores of each class for the multiclass task." (https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html)
+
+## How to run:<a name="How_to_run"></a>
+Assuming that your current working directory is home (i.e., data, webapp, models are all subdirectories one level below), you can then run the .py files "process_data.py", "train_classifier.py", & "run.py" in your terminal with the following commands. For example:
+  
+  ```bash
+  python process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
+  ```
+  
+  ```bash
+  python train_classifier.py data/DisasterResponse.db models/classifier.pkl
+  ```
+  
+  ```bash
+  python webapp/run.py
+  ```
+
+Note: You might need to adjust the paths to run these .py files.
 
 ## Summary of results:<a name="Summary_of_results"></a>
 work in progress
