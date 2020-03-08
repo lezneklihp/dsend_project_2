@@ -64,34 +64,34 @@ Clone the repository to a directory. When you then change directory into the git
 
 Now assuming that your current working directory is home (i.e., data, webapp, models are all subdirectories one level below), you can then run the .py files "process_data.py", "train_classifier.py", & "run.py" in your terminal with the following commands. For example:
   
-    ```bash
-    python process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
-    ```
+```bash
+python process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
+```
   
-    ```bash
-    python train_classifier.py data/DisasterResponse.db models/classifier.pkl
-    ```
+```bash
+python train_classifier.py data/DisasterResponse.db models/classifier.pkl
+```
   
-    ```bash
-    python webapp/run.py
-    ```
+```bash
+python webapp/run.py
+```
 
 Note: You might need to adjust the paths to run these .py files.
 
 ## How to run locally in a Docker container:<a name="How_to_run_with_docker"></a>
 Clone the repository to a directory. Change directory to the git repository. There execute the follwing Docker commands to create a Docker image called "dsend-2". Specify the ports (if you don't want to access the Flask app on port 5001).
 
-    ```bash
-    docker build -t dsend-2 .
-    ```
+```bash
+docker build -t dsend-2 .
+```
     
-    ```bash
-    docker run -it --rm --name my-app dsend-2:latest
-    ```
+```bash
+docker run -it --rm --name my-app dsend-2:latest
+```
     
-    ```bash
-    docker run -d -p 3001:5001 dsend-2:latest
-    ```
+```bash
+docker run -d -p 3001:5001 dsend-2:latest
+```
 
 ## Summary of results:<a name="Summary_of_results"></a>
 work in progress
