@@ -86,11 +86,7 @@ docker build -t dsend-2 .
 ```
     
 ```bash
-docker run -it --rm --name my-app dsend-2:latest
-```
-    
-```bash
-docker run -d -p 3001:5001 dsend-2:latest
+docker run -p 3001:3001 -it --rm --name disasterresponse-app dsend-2:latest
 ```
 
 ## Summary of results:<a name="Summary_of_results"></a>
