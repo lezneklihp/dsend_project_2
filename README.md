@@ -8,7 +8,7 @@
 - [Acknowledgements & licensing](#Acknowledgements)
 
 ## Repository content:<a name="Repository_content"></a>
-This repository includes .py files for the second project of the Udacity Data Scientist for Enterprise Nanodegree.
+This repository includes .csv, .db, .html, .pkl, and .py files for the second project of the Udacity Data Scientist for Enterprise Nanodegree.
 
 ```bash
 .
