@@ -33,7 +33,7 @@ Python version 3.x & the followings packages:
 - sklearn==0.22
 - SQLAlchemy==1.3.13
 
-Assuming that your current working directory is home (i.e., data, webapp, models are all subdirectories one level below), you can then run the .py files "process_data.py" & "train_classifier.py" in your terminal with the following commands. For example:
+Assuming that your current working directory is home (i.e., data, webapp, models are all subdirectories one level below), you can then run the .py files "process_data.py", "train_classifier.py", & "run.py" in your terminal with the following commands. For example:
   
   ```bash
   python process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
