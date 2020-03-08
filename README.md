@@ -73,10 +73,12 @@ python train_classifier.py data/DisasterResponse.db models/classifier.pkl
 ```
   
 ```bash
-python webapp/run.py
+python webapp/run.py ada_classifier.pkl
 ```
 
-Note: You might need to adjust the paths to run these .py files.
+Note: You might need to adjust the paths to run these .py files. The third command accepts other file names for the other .pkl files. These are:
+- ada_classifier.pkl for the AdaBoostClassifier
+
 
 ## How to run locally in a Docker container:<a name="How_to_run_with_docker"></a>
 Clone the repository to a directory. Change directory to the git repository. There execute the follwing Docker commands to create a Docker image called "dsend-2". Specify the ports (if you don't want to access the Flask app on port 5001).
