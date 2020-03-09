@@ -36,13 +36,12 @@ def clean_data(df_categories, df):
     """
 
     # Create & clean the information on disaster categories
-    df_categories = df_categories['categories'].str.split(';', expand=True)
-    labels = df_categories.iloc[0,:]
+    df_categories = df_categories.iloc[:, 1].str.split(';', expand=True)
+    labels = df_categories.iloc[0, :]
     category_colnames = labels.replace(r'-[0-9]', '', regex=True).tolist()
     df_categories.columns = category_colnames
-    df_categories.replace(r'[a-z]|_|-', '', inplace=True, regex=True)
-    for column in df_categories:
-        df_categories[column] = df_categories[column].astype(int)
+    df_categories.replace(r'[a-zA-Z]|_|-| ', '', inplace=True, regex=True)
+    df_categories = df_categories.apply(pd.to_numeric)
 
     # Remove original messages & replace previous information on disaster categories
     df.drop(columns=['original', 'categories'], axis=1, inplace=True)
