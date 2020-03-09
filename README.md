@@ -95,4 +95,4 @@ docker run -p 3001:3001 -it --rm --name disasterresponse-app dsend-2:latest
 work in progress
 
 ## Acknowledgements & licensing:<a name="Acknowledgements"></a>
-- Thanks to FigureEight for their data on Twitter messages.
+- Thanks to Figure Eight for their data on Twitter messages.
