@@ -1,3 +1,4 @@
+from lightgbm import LGBMClassifier
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem.wordnet import WordNetLemmatizer
@@ -82,13 +83,18 @@ def build_model():
     >>> model = build_model()
     """
 
-    model = make_pipeline(
+    pipeline = make_pipeline(
                     TfidfVectorizer(
                                     tokenizer=tokenize,
                                     smooth_idf=False),
                     MultiOutputClassifier(
                                     AdaBoostClassifier(),
                     n_jobs=-1))
+
+    parameters_dict = dict(multioutputclassifier__estimator__n_estimators=[20, 50, 200],
+                       multioutputclassifier__estimator__learning_rate=[0.01, 0.2])
+
+    model = GridSearchCV(pipeline, param_grid=parameters_dict, cv=2, verbose=3, n_jobs=-1)
 
     return model
 
