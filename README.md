@@ -9,7 +9,7 @@
 ## Project summary:<a name="Summary"></a>
 Twitter allows its users to share concerns with the public. In the case of a disaster (such as the COVID-19 pandemic), making others aware of a problem can potentially save lives. When time is short, however, it could turn out to be challenging to interpret Twitter messages quickly.
 
-The idea behind this project is thus to analyze text data & to categorize messages. Thereby rescuers can understand faster how to help people in need. This idea has been suggested originally by Figure Eight Inc.
+The idea behind this project is thus to analyze text data & to categorize Twitter messages. Thereby rescuers can understand faster how to help people in need. This idea has been suggested originally by Figure Eight Inc.
 
 From a technical perspective, this is a multilabel classification task of a supervised machine learning problem. In such tasks, samples can fall into more than one category. Evaluating whether a model does this correctly then turns out to be more complex than relying on the accuracy metric only. High accuracy scores might mislead us here. Thus, we also need to take precision & recall into account. At this point, a differentiation between accuracy & precision will help us evaluate the quality of a model's classifications.
 
@@ -18,12 +18,12 @@ In a few words, here is what this project entails:
 1) Preparing data:
 - read in .csv data
 - create separate category columns
-- remove unnecessary characters & messages in their original language
+- remove characters & messages in their original language
 - replace unexpected values for the "related" column
 - drop any entries with NaNs
 - remove duplicated entries
 - cast binary data for categories to integer dtype
-- save data to a SQLite database
+- save data to SQLite database
 
 2) Training classifiers:
 - load prepared data set
@@ -41,7 +41,7 @@ In a few words, here is what this project entails:
 - create Dockerfile to save others from having to adjust their Python development environment
 
 ## Repository content:<a name="Repository_content"></a>
-This repository includes .csv, .db, .html, .pkl, & .py files for the second project of the Udacity Data Scientist for Enterprise Nanodegree. In addition, there are .txt, .sh and a Dockerfile which were created to make this project more easily transferable to other machines.
+This repository includes .csv, .db, .html, .pkl & .py files for the second project of the Udacity Data Scientist for Enterprise Nanodegree. In addition, there are .txt, .sh & a Dockerfile which were created to make this project more easily transferable to other machines.
 
 In "/data" there are all files needed for preparing data. In "/models" there are files for training classifiers. In "/app" there are files for running the Flask application. The other files in the root directory of this repository are used for creating a containerized version of the Flask app.
 
@@ -90,7 +90,7 @@ I used [pip](https://pip.pypa.io/en/stable/) to install these packages.
 ## How to run locally:<a name="How_to_run"></a>
 Clone this repository to a directory. Then change directory into the git repository. Let's call the directory of the git repository "home".
 
-Now assuming that your current working directory is home (i.e., data, webapp, models are all subdirectories one level below), you can then run the .py files "process_data.py", "train_classifier.py", & "run.py" in your terminal with the following commands. For example:
+Now assuming that your current working directory is home (i.e., app, data, models are all subdirectories one level below), you can then run the .py files "process_data.py", "train_classifier.py" & "run.py" in your terminal with the following commands. For example:
 
 ```bash
 python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
@@ -104,11 +104,11 @@ python models/train_classifier.py data/DisasterResponse.db models/ada_classifier
 python app/run.py ada_classifier.pkl
 ```
 
-You can then access the Flask app on http://0.0.0.0:3001/
+You can afterwards access the Flask app on http://0.0.0.0:3001/
 
-Note: You might need to adjust the paths to run these .py files. The third command accepts file names for other .pkl files. In this repository, there are currently the followings trained classifiers available:
-- ada_classifier.pkl for the AdaBoostClassifier
-- lgbm_classifier.pkl for the LGBMClassifier
+Note: You might need to adjust the paths to run these .py files. The third command accepts file names for other .pkl files. In this repository, there are currently the following trained classifiers available:
+- "ada_classifier.pkl" for the AdaBoostClassifier
+- "lgbm_classifier.pkl" for the LGBMClassifier
 
 ## How to run locally in a Docker container:<a name="How_to_run_with_docker"></a>
 If you want to run this app locally without (un-)installing current versions of Python packages on your machine, you can run the app inside a Docker container. Nonetheless, you will have to install Docker for this option in the first place.
@@ -123,7 +123,7 @@ docker build -t dsend-2 .
 docker run -p 3001:3001 -it --rm --name disasterresponse-app dsend-2:latest
 ```
 
-Note: You can again load any other trained model as .pkl file in the entrypoint "setup.sh". For users with a Windows OS this workaround with Docker might turn out to be difficult.
+Note: You can again load any other trained model as .pkl file with the entrypoint "setup.sh". For users with a Windows OS this Docker workaround might turn out to be difficult to put into practice.
 
 ## Acknowledgements & licensing:<a name="Acknowledgements"></a>
 Thanks to Figure Eight for their data on Twitter messages.
