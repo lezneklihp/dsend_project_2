@@ -1,4 +1,4 @@
-from lightgbm import LGBMClassifier
+# from lightgbm import LGBMClassifier
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
@@ -89,7 +89,7 @@ def build_model():
                                     smooth_idf=False),
                     MultiOutputClassifier(
                                     AdaBoostClassifier(),
-                    n_jobs=-1))
+                    n_jobs=1))
 
     parameters_dict = dict(multioutputclassifier__estimator__n_estimators=[20, 50, 200],
                        multioutputclassifier__estimator__learning_rate=[0.01, 0.2])
@@ -112,7 +112,7 @@ def evaluate_model(model, X_test, y_test, category_names):
     y_pred = model.predict(X_test)
 
     for col in range(len(category_names)):
-        result = classification_report(y_test.iloc[:,col], y_pred[:,col], zero_division=0)
+        result = classification_report(y_test.iloc[:,col], y_pred[:,col])
         print("Report on", category_names[col], ":")
         print(result)
         print("F1-score of positive classes:", f1_score(y_test.iloc[:,col], y_pred[:,col], labels=np.unique(y_pred), average=None))
