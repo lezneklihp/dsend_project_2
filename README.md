@@ -43,23 +43,30 @@ In a few words, here is what this project entails:
 ## Repository content:<a name="Repository_content"></a>
 This repository includes .csv, .db, .html, .pkl, & .py files for the second project of the Udacity Data Scientist for Enterprise Nanodegree. In addition, there are .txt, .sh and a Dockerfile which were created to make this project more easily transferable to other machines.
 
-In "/data" there are all files needed for preparing data. In "/models" there are files for training classifiers. In "/webapp" there are files for running the Flask application. The other files in the root directory of this repository are used for creating a containerized version of the Flask app.
+In "/data" there are all files needed for preparing data. In "/models" there are files for training classifiers. In "/app" there are files for running the Flask application. The other files in the root directory of this repository are used for creating a containerized version of the Flask app.
 
 ```bash
 .
+├── README.md
+├── app
+│   ├── run.py
+│   └── templates
+│       ├── go.html
+│       └── master.html
 ├── data
 │   ├── DisasterResponse.db
 │   ├── disaster_categories.csv
-│   └── disaster_messages.csv
+│   ├── disaster_messages.csv
+│   └── process_data.py
+├── dockerfile
 ├── models
-│   └── classifier.pkl
-├── process_data.py
-├── train_classifier.py
-└── webapp
-    ├── run.py
-    └── templates
-        ├── go.html
-        └── master.html
+│   ├── ada_classifier.pkl
+│   ├── ada_classifier_training_results.txt
+│   ├── lgbm_classifier.pkl
+│   ├── lgbm_classifier_training_result.txt
+│   └── train_classifier.py
+├── requirements.txt
+└── setup.sh
 ```
 
 ## Software requirements:<a name="Software_requirements"></a>
@@ -97,14 +104,16 @@ python models/train_classifier.py data/DisasterResponse.db models/ada_classifier
 python app/run.py ada_classifier.pkl
 ```
 
-Note: You might need to adjust the paths to run these .py files. The third command accepts file names for other .pkl files. In this repository, there are currently the followings trained models supported:
+You can then access the Flask app on http://0.0.0.0:3001/
+
+Note: You might need to adjust the paths to run these .py files. The third command accepts file names for other .pkl files. In this repository, there are currently the followings trained classifiers available:
 - ada_classifier.pkl for the AdaBoostClassifier
 - lgbm_classifier.pkl for the LGBMClassifier
 
 ## How to run locally in a Docker container:<a name="How_to_run_with_docker"></a>
 If you want to run this app locally without (un-)installing current versions of Python packages on your machine, you can run the app inside a Docker container. Nonetheless, you will have to install Docker for this option in the first place.
 
-Then clone this repository to a directory on your machine. Change directory to the git repository. There execute the following Docker commands to create a Docker image called "dsend-2" (or any other image name) in your terminal. If you don't want to access the Flask app on port 5001, specify a port to access the web app in a browser (e.g., Chrome).
+Then clone this repository to a directory on your machine. Change directory to the git repository. There execute the following Docker commands to create a Docker image called "dsend-2" (or any other image name) in your terminal. If you don't want to access the Flask app on port 5001, specify a port to access the web app in a browser (e.g., Chrome). You will get your specific URL displayed in the terminal.
 
 ```bash
 docker build -t dsend-2 .
