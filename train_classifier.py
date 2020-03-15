@@ -36,7 +36,7 @@ def load_database_data(database_filename):
     connection = create_engine(''.join(['sqlite:///', database_filename]))
     df = pd.read_sql_query('SELECT * FROM categorized_messages', connection)
     X = df['message'].values
-    y = df.iloc[:, 6:]
+    y = df.iloc[:, 3:]
     category_names = list(y.columns)
 
     return X, y, category_names
