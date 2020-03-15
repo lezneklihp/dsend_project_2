@@ -2,151 +2,170 @@ Loading data...
     DATABASE: data/DisasterResponse.db
 Building model...
 Training model...
-Fitting 5 folds for each of 6 candidates, totalling 30 fits
-[CV] multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=2, score=0.4340567612687813, total= 2.6min
-[Parallel(n_jobs=-1)]: Done   1 out of   1 | elapsed:  4.5min remaining:    0.0s
-[CV] multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=2, score=0.44717386119723346, total= 2.5min
-[Parallel(n_jobs=-1)]: Done   2 out of   2 | elapsed:  9.0min remaining:    0.0s
-[CV] multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=2, score=0.4357262103505843, total= 2.5min
-[CV] multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=2, score=0.4495587884569521, total= 2.5min
-[CV] multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=2, score=0.43787264488433103, total= 2.5min
-[CV] multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=2, score=0.4340567612687813, total= 2.5min
-[CV] multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=2, score=0.44717386119723346, total= 2.5min
-[CV] multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=2, score=0.4357262103505843, total= 2.5min
-[CV] multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=2, score=0.4495587884569521, total= 2.5min
-[CV] multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=2, score=0.43787264488433103, total= 2.5min
-[CV] multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=2, score=0.4340567612687813, total= 2.5min
-[CV] multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=2, score=0.44717386119723346, total= 2.5min
-[CV] multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=2, score=0.4357262103505843, total= 2.5min
-[CV] multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=2, score=0.4495587884569521, total= 2.5min
-[CV] multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=2, score=0.43787264488433103, total= 2.5min
-[CV] multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=2, score=0.43143334128309085, total= 2.5min
-[CV] multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=2, score=0.44383496303362746, total= 2.5min
-[CV] multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=2, score=0.431194848557119, total= 2.5min
-[CV] multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=2, score=0.44502742666348677, total= 2.5min
-[CV] multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=2, score=0.43143334128309085, total= 2.5min
-[CV] multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=2, score=0.43143334128309085, total= 2.5min
-[CV] multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=2, score=0.44383496303362746, total= 2.5min
-[CV] multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=2, score=0.431194848557119, total= 2.5min
-[CV] multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=2, score=0.44502742666348677, total= 2.5min
-[CV] multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=2, score=0.43143334128309085, total= 2.5min
-[CV] multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=2, score=0.43143334128309085, total= 2.5min
-[CV] multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=2, score=0.44383496303362746, total= 2.5min
-[CV] multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=2, score=0.431194848557119, total= 2.5min
-[CV] multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=2, score=0.44502742666348677, total= 2.5min
-[CV] multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=2 
-[CV]  multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=2, score=0.43143334128309085, total= 2.5min
-[Parallel(n_jobs=-1)]: Done  30 out of  30 | elapsed: 133.8min finished
+Fitting 3 folds for each of 6 candidates, totalling 18 fits
+[CV] multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=3, multioutputclassifier_
+_estimator__num_leaves=3
+[CV]  multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=3, multioutputclassifier
+__estimator__num_leaves=3, score=0.20174560022893118, total= 2.7min
+[Parallel(n_jobs=-1)]: Done   1 out of   1 | elapsed:  4.4min remaining:    0.0s
+[CV] multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=3
+[CV]  multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=3, score=0.19404693760732686, total= 2.7min
+[Parallel(n_jobs=-1)]: Done   2 out of   2 | elapsed:  8.8min remaining:    0.0s
+[CV] multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=3
+[CV]  multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=3, score=0.2027761877504293, total= 2.7min
+[CV] multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=3
+[CV]  multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=3, score=0.20174560022893118, total= 2.7min
+[CV] multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=3
+[CV]  multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=3, score=0.19404693760732686, total= 2.7min
+[CV] multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=3
+[CV]  multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=3, score=0.2027761877504293, total= 2.7min
+[CV] multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=3
+[CV]  multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=3, score=0.20174560022893118, total= 2.7min
+[CV] multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=3
+[CV]  multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=3, score=0.19404693760732686, total= 2.7min
+[CV] multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=3
+[CV]  multioutputclassifier__estimator__learning_rate=0.0001, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=3, score=0.2027761877504293, total= 2.7min
+[CV] multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=3
+[CV]  multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=3, score=0.19230218915438546, total= 2.7min
+[CV] multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=3
+[CV]  multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=3, score=0.1861763022323984, total= 2.7min
+[CV] multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=3
+[CV]  multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=3, multioutputclassifier__estimator__num_leaves=3, score=0.19662278191184887, total= 2.7min
+[CV] multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=3
+[CV]  multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=3, score=0.19230218915438546, total= 2.7min
+[CV] multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=3
+[CV]  multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=3, score=0.1861763022323984, total= 2.7min
+[CV] multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=3
+[CV]  multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=7, multioutputclassifier__estimator__num_leaves=3, score=0.19662278191184887, total= 2.7min
+[CV] multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=3
+[CV]  multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=3, score=0.19230218915438546, total= 2.7min
+[CV] multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=3
+[CV]  multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=3, score=0.1861763022323984, total= 2.7min
+[CV] multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=3
+[CV]  multioutputclassifier__estimator__learning_rate=0.2, multioutputclassifier__estimator__max_depth=10, multioutputclassifier__estimator__num_leaves=3, score=0.19662278191184887, total= 2.7min
+[Parallel(n_jobs=-1)]: Done  18 out of  18 | elapsed: 78.5min finished
 Evaluating model...
 /opt/conda/lib/python3.6/site-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
   'precision', 'predicted', average, warn_for)
+Report on related :
+             precision    recall  f1-score   support
+
+          0       0.00      0.00      0.00      1228
+          1       0.77      1.00      0.87      4014
+
+avg / total       0.59      0.77      0.66      5242
+
+/opt/conda/lib/python3.6/site-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+F1-score of positive classes: [ 0.         0.8673293]
+F1-score (micro): 0.765738267837
+F1-score (macro): 0.433664649957
+F1-score (weighted): 0.66414723576
+Accuracy score: 0.765738267837
+Report on request :
+             precision    recall  f1-score   support
+
+          0       0.83      1.00      0.91      4370
+          1       0.00      0.00      0.00       872
+
+avg / total       0.69      0.83      0.76      5242
+
+F1-score of positive classes: [ 0.90928007  0.        ]
+F1-score (micro): 0.833651278138
+F1-score (macro): 0.454640033292
+F1-score (weighted): 0.758022489693
+Accuracy score: 0.833651278138
+Report on offer :
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      5209
+          1       0.00      0.00      0.00        33
+
+avg / total       0.99      0.99      0.99      5242
+
+F1-score of positive classes: [ 0.99684241  0.        ]
+F1-score (micro): 0.993704692865
+F1-score (macro): 0.498421203713
+F1-score (weighted): 0.990566978306
+Accuracy score: 0.993704692865
 Report on aid_related :
              precision    recall  f1-score   support
 
-          0       0.58      1.00      0.73      3028
-          1       0.00      0.00      0.00      2214
+          0       0.59      1.00      0.74      3102
+          1       0.00      0.00      0.00      2140
 
-avg / total       0.33      0.58      0.42      5242
+avg / total       0.35      0.59      0.44      5242
 
-F1-score of positive classes: [ 0.73228537]
-F1-score (micro): 0.732285368803
-F1-score (macro): 0.732285368803
-F1-score (weighted): 0.732285368803
-Accuracy score: 0.577642121328
+F1-score of positive classes: [ 0.74352828  0.        ]
+F1-score (micro): 0.59175887066
+F1-score (macro): 0.371764141898
+F1-score (weighted): 0.439989457523
+Accuracy score: 0.59175887066
 Report on medical_help :
              precision    recall  f1-score   support
 
-          0       0.92      1.00      0.96      4813
-          1       0.00      0.00      0.00       429
+          0       0.92      1.00      0.96      4827
+          1       0.00      0.00      0.00       415
 
-avg / total       0.84      0.92      0.88      5242
+avg / total       0.85      0.92      0.88      5242
 
-F1-score of positive classes: [ 0.95733466]
-F1-score (micro): 0.957334659373
-F1-score (macro): 0.957334659373
-F1-score (weighted): 0.957334659373
-Accuracy score: 0.918161007249
+F1-score of positive classes: [ 0.95878439  0.        ]
+F1-score (micro): 0.920831743609
+F1-score (macro): 0.479392193862
+F1-score (weighted): 0.882879099494
+Accuracy score: 0.920831743609
 Report on medical_products :
              precision    recall  f1-score   support
 
-          0       0.95      1.00      0.98      4992
-          1       0.00      0.00      0.00       250
+          0       0.95      1.00      0.98      4998
+          1       0.00      0.00      0.00       244
 
 avg / total       0.91      0.95      0.93      5242
 
-F1-score of positive classes: [ 0.97557162]
-F1-score (micro): 0.975571623998
-F1-score (macro): 0.975571623998
-F1-score (weighted): 0.975571623998
-Accuracy score: 0.952308279283
+F1-score of positive classes: [ 0.97617188  0.        ]
+F1-score (micro): 0.95345288058
+F1-score (macro): 0.4880859375
+F1-score (weighted): 0.93073388616
+Accuracy score: 0.95345288058
 Report on search_and_rescue :
              precision    recall  f1-score   support
 
-          0       0.97      1.00      0.99      5110
-          1       0.00      0.00      0.00       132
+          0       0.97      1.00      0.99      5100
+          1       0.00      0.00      0.00       142
 
 avg / total       0.95      0.97      0.96      5242
 
-F1-score of positive classes: [ 0.98724884]
-F1-score (micro): 0.987248840804
-F1-score (macro): 0.987248840804
-F1-score (weighted): 0.987248840804
-Accuracy score: 0.974818771461
+F1-score of positive classes: [ 0.98626958  0.        ]
+F1-score (micro): 0.972911102633
+F1-score (macro): 0.493134790176
+F1-score (weighted): 0.959552624913
+Accuracy score: 0.972911102633
 Report on security :
              precision    recall  f1-score   support
 
-          0       0.98      1.00      0.99      5127
-          1       0.00      0.00      0.00       115
+          0       0.98      1.00      0.99      5155
+          1       0.00      0.00      0.00        87
 
-avg / total       0.96      0.98      0.97      5242
+avg / total       0.97      0.98      0.98      5242
 
-F1-score of positive classes: [ 0.98890925]
-F1-score (micro): 0.988909248722
-F1-score (macro): 0.988909248722
-F1-score (weighted): 0.988909248722
-Accuracy score: 0.97806180847
+F1-score of positive classes: [ 0.9916322  0.       ]
+F1-score (micro): 0.98340328119
+F1-score (macro): 0.495816100798
+F1-score (weighted): 0.975174360784
+Accuracy score: 0.98340328119
 Report on military :
              precision    recall  f1-score   support
 
-          0       0.96      1.00      0.98      5050
-          1       0.00      0.00      0.00       192
+          0       0.97      1.00      0.98      5083
+          1       0.00      0.00      0.00       159
 
-avg / total       0.93      0.96      0.95      5242
+avg / total       0.94      0.97      0.95      5242
 
-F1-score of positive classes: [ 0.98134473]
-F1-score (micro): 0.981344733774
-F1-score (macro): 0.981344733774
-F1-score (weighted): 0.981344733774
-Accuracy score: 0.963372758489
+F1-score of positive classes: [ 0.98460048  0.        ]
+F1-score (micro): 0.969668065624
+F1-score (macro): 0.492300242131
+F1-score (weighted): 0.954735646986
+Accuracy score: 0.969668065624
 Report on child_alone :
              precision    recall  f1-score   support
 
@@ -154,115 +173,117 @@ Report on child_alone :
 
 avg / total       1.00      1.00      1.00      5242
 
-F1-score of positive classes: [ 1.]
+/opt/conda/lib/python3.6/site-packages/sklearn/metrics/classification.py:1137: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 in labels with no true samples.
+  'recall', 'true', average, warn_for)
+F1-score of positive classes: [ 1.  0.]
 F1-score (micro): 1.0
-F1-score (macro): 1.0
+F1-score (macro): 0.5
 F1-score (weighted): 1.0
 Accuracy score: 1.0
 Report on water :
              precision    recall  f1-score   support
 
-          0       0.93      1.00      0.97      4888
-          1       0.00      0.00      0.00       354
+          0       0.94      1.00      0.97      4931
+          1       0.00      0.00      0.00       311
 
-avg / total       0.87      0.93      0.90      5242
+avg / total       0.88      0.94      0.91      5242
 
-F1-score of positive classes: [ 0.96505429]
-F1-score (micro): 0.965054294176
-F1-score (macro): 0.965054294176
-F1-score (weighted): 0.965054294176
-Accuracy score: 0.932468523464
+F1-score of positive classes: [ 0.96942888  0.        ]
+F1-score (micro): 0.940671499428
+F1-score (macro): 0.484714440185
+F1-score (weighted): 0.911914118486
+Accuracy score: 0.940671499428
 Report on food :
              precision    recall  f1-score   support
 
-          0       0.88      1.00      0.94      4632
-          1       0.00      0.00      0.00       610
+          0       0.89      1.00      0.94      4669
+          1       0.00      0.00      0.00       573
 
-avg / total       0.78      0.88      0.83      5242
+avg / total       0.79      0.89      0.84      5242
 
-F1-score of positive classes: [ 0.93822159]
-F1-score (micro): 0.93822159206
-F1-score (macro): 0.93822159206
-F1-score (weighted): 0.93822159206
-Accuracy score: 0.88363220145
+F1-score of positive classes: [ 0.94218545  0.        ]
+F1-score (micro): 0.890690576116
+F1-score (macro): 0.471092725255
+F1-score (weighted): 0.839195701722
+Accuracy score: 0.890690576116
 Report on shelter :
              precision    recall  f1-score   support
 
-          0       0.91      1.00      0.96      4794
-          1       0.00      0.00      0.00       448
+          0       0.91      1.00      0.95      4776
+          1       0.00      0.00      0.00       466
 
-avg / total       0.84      0.91      0.87      5242
+avg / total       0.83      0.91      0.87      5242
 
-F1-score of positive classes: [ 0.9553607]
-F1-score (micro): 0.955360701475
-F1-score (macro): 0.955360701475
-F1-score (weighted): 0.955360701475
-Accuracy score: 0.914536436475
+F1-score of positive classes: [ 0.95348373  0.        ]
+F1-score (micro): 0.911102632583
+F1-score (macro): 0.476741864644
+F1-score (weighted): 0.868721535879
+Accuracy score: 0.911102632583
 Report on clothing :
              precision    recall  f1-score   support
 
-          0       0.98      1.00      0.99      5162
-          1       0.00      0.00      0.00        80
+          0       0.98      1.00      0.99      5159
+          1       0.00      0.00      0.00        83
 
 avg / total       0.97      0.98      0.98      5242
 
-F1-score of positive classes: [ 0.99231065]
-F1-score (micro): 0.99231064975
-F1-score (macro): 0.99231064975
-F1-score (weighted): 0.99231064975
-Accuracy score: 0.98473864937
+F1-score of positive classes: [ 0.99202  0.     ]
+F1-score (micro): 0.984166348722
+F1-score (macro): 0.496009999039
+F1-score (weighted): 0.976312699367
+Accuracy score: 0.984166348722
 Report on money :
              precision    recall  f1-score   support
 
-          0       0.98      1.00      0.99      5122
-          1       0.00      0.00      0.00       120
+          0       0.98      1.00      0.99      5145
+          1       0.00      0.00      0.00        97
 
-avg / total       0.95      0.98      0.97      5242
+avg / total       0.96      0.98      0.97      5242
 
-F1-score of positive classes: [ 0.98842146]
-F1-score (micro): 0.988421458896
-F1-score (macro): 0.988421458896
-F1-score (weighted): 0.988421458896
-Accuracy score: 0.977107974056
+F1-score of positive classes: [ 0.9906614  0.       ]
+F1-score (micro): 0.981495612362
+F1-score (macro): 0.495330701839
+F1-score (weighted): 0.972329821046
+Accuracy score: 0.981495612362
 Report on missing_people :
              precision    recall  f1-score   support
 
-          0       0.99      1.00      0.99      5183
-          1       0.00      0.00      0.00        59
+          0       0.99      1.00      0.99      5181
+          1       0.00      0.00      0.00        61
 
 avg / total       0.98      0.99      0.98      5242
 
-F1-score of positive classes: [ 0.99434053]
-F1-score (micro): 0.994340527578
-F1-score (macro): 0.994340527578
-F1-score (weighted): 0.994340527578
-Accuracy score: 0.988744753911
+F1-score of positive classes: [ 0.99414756  0.        ]
+F1-score (micro): 0.988363220145
+F1-score (macro): 0.497073779142
+F1-score (weighted): 0.982578882005
+Accuracy score: 0.988363220145
 Report on refugees :
              precision    recall  f1-score   support
 
-          0       0.97      1.00      0.98      5063
-          1       0.00      0.00      0.00       179
+          0       0.97      1.00      0.98      5074
+          1       0.00      0.00      0.00       168
 
-avg / total       0.93      0.97      0.95      5242
+avg / total       0.94      0.97      0.95      5242
 
-F1-score of positive classes: [ 0.98262979]
-F1-score (micro): 0.982629791363
-F1-score (macro): 0.982629791363
-F1-score (weighted): 0.982629791363
-Accuracy score: 0.965852727966
+F1-score of positive classes: [ 0.98371462  0.        ]
+F1-score (micro): 0.967951163678
+F1-score (macro): 0.491857309035
+F1-score (weighted): 0.952187709287
+Accuracy score: 0.967951163678
 Report on death :
              precision    recall  f1-score   support
 
-          0       0.95      1.00      0.98      4992
-          1       0.00      0.00      0.00       250
+          0       0.96      1.00      0.98      5028
+          1       0.00      0.00      0.00       214
 
-avg / total       0.91      0.95      0.93      5242
+avg / total       0.92      0.96      0.94      5242
 
-F1-score of positive classes: [ 0.97557162]
-F1-score (micro): 0.975571623998
-F1-score (macro): 0.975571623998
-F1-score (weighted): 0.975571623998
-Accuracy score: 0.952308279283
+F1-score of positive classes: [ 0.97916261  0.        ]
+F1-score (micro): 0.959175887066
+F1-score (macro): 0.489581304771
+F1-score (weighted): 0.93918916459
+Accuracy score: 0.959175887066
 Report on other_aid :
              precision    recall  f1-score   support
 
@@ -271,232 +292,232 @@ Report on other_aid :
 
 avg / total       0.76      0.87      0.81      5242
 
-F1-score of positive classes: [ 0.93085866]
-F1-score (micro): 0.930858657965
-F1-score (macro): 0.930858657965
-F1-score (weighted): 0.930858657965
+F1-score of positive classes: [ 0.93085866  0.        ]
+F1-score (micro): 0.870660053415
+F1-score (macro): 0.465429328982
+F1-score (weighted): 0.810461448865
 Accuracy score: 0.870660053415
 Report on infrastructure_related :
              precision    recall  f1-score   support
 
-          0       0.94      1.00      0.97      4935
-          1       0.00      0.00      0.00       307
+          0       0.93      1.00      0.96      4886
+          1       0.00      0.00      0.00       356
 
-avg / total       0.89      0.94      0.91      5242
+avg / total       0.87      0.93      0.90      5242
 
-F1-score of positive classes: [ 0.96983394]
-F1-score (micro): 0.969833939275
-F1-score (macro): 0.969833939275
-F1-score (weighted): 0.969833939275
-Accuracy score: 0.941434566959
+F1-score of positive classes: [ 0.96484992  0.        ]
+F1-score (micro): 0.932086989699
+F1-score (macro): 0.482424960506
+F1-score (weighted): 0.899324058386
+Accuracy score: 0.932086989699
 Report on transport :
              precision    recall  f1-score   support
 
-          0       0.95      1.00      0.98      4997
-          1       0.00      0.00      0.00       245
-
-avg / total       0.91      0.95      0.93      5242
-
-F1-score of positive classes: [ 0.97607188]
-F1-score (micro): 0.97607188202
-F1-score (macro): 0.97607188202
-F1-score (weighted): 0.97607188202
-Accuracy score: 0.953262113697
-Report on buildings :
-             precision    recall  f1-score   support
-
-          0       0.95      1.00      0.97      4971
-          1       0.00      0.00      0.00       271
-
-avg / total       0.90      0.95      0.92      5242
-
-F1-score of positive classes: [ 0.97346519]
-F1-score (micro): 0.973465191423
-F1-score (macro): 0.973465191423
-F1-score (weighted): 0.973465191423
-Accuracy score: 0.948302174742
-Report on electricity :
-             precision    recall  f1-score   support
-
-          0       0.98      1.00      0.99      5138
-          1       0.00      0.00      0.00       104
-
-avg / total       0.96      0.98      0.97      5242
-
-F1-score of positive classes: [ 0.98998073]
-F1-score (micro): 0.989980732177
-F1-score (macro): 0.989980732177
-F1-score (weighted): 0.989980732177
-Accuracy score: 0.980160244182
-Report on tools :
-             precision    recall  f1-score   support
-
-          0       0.99      1.00      1.00      5207
-          1       0.00      0.00      0.00        35
-
-avg / total       0.99      0.99      0.99      5242
-
-F1-score of positive classes: [ 0.9966504]
-F1-score (micro): 0.996650397167
-F1-score (macro): 0.996650397167
-F1-score (weighted): 0.996650397167
-Accuracy score: 0.9933231591
-Report on hospitals :
-             precision    recall  f1-score   support
-
-          0       0.99      1.00      1.00      5192
-          1       0.00      0.00      0.00        50
-
-avg / total       0.98      0.99      0.99      5242
-
-F1-score of positive classes: [ 0.99520797]
-F1-score (micro): 0.995207973931
-F1-score (macro): 0.995207973931
-F1-score (weighted): 0.995207973931
-Accuracy score: 0.990461655857
-Report on shops :
-             precision    recall  f1-score   support
-
-          0       1.00      1.00      1.00      5220
-          1       0.00      0.00      0.00        22
-
-avg / total       0.99      1.00      0.99      5242
-
-F1-score of positive classes: [ 0.99789715]
-F1-score (micro): 0.997897151596
-F1-score (macro): 0.997897151596
-F1-score (weighted): 0.997897151596
-Accuracy score: 0.995803128577
-Report on aid_centers :
-             precision    recall  f1-score   support
-
-          0       0.99      1.00      0.99      5175
-          1       0.00      0.00      0.00        67
-
-avg / total       0.97      0.99      0.98      5242
-
-F1-score of positive classes: [ 0.99356821]
-F1-score (micro): 0.993568205817
-F1-score (macro): 0.993568205817
-F1-score (weighted): 0.993568205817
-Accuracy score: 0.987218618848
-Report on other_infrastructure :
-             precision    recall  f1-score   support
-
-          0       0.96      1.00      0.98      5041
-          1       0.00      0.00      0.00       201
+          0       0.96      1.00      0.98      5020
+          1       0.00      0.00      0.00       222
 
 avg / total       0.92      0.96      0.94      5242
 
-F1-score of positive classes: [ 0.98045318]
-F1-score (micro): 0.980453175143
-F1-score (macro): 0.980453175143
-F1-score (weighted): 0.980453175143
-Accuracy score: 0.961655856543
-Report on weather_related :
+F1-score of positive classes: [ 0.97836679  0.        ]
+F1-score (micro): 0.957649752003
+F1-score (macro): 0.48918339505
+F1-score (weighted): 0.936932713907
+Accuracy score: 0.957649752003
+Report on buildings :
              precision    recall  f1-score   support
 
-          0       0.72      1.00      0.84      3764
-          1       0.00      0.00      0.00      1478
+          0       0.95      1.00      0.97      4966
+          1       0.00      0.00      0.00       276
 
-avg / total       0.52      0.72      0.60      5242
+avg / total       0.90      0.95      0.92      5242
 
-F1-score of positive classes: [ 0.83588719]
-F1-score (micro): 0.83588718632
-F1-score (macro): 0.83588718632
-F1-score (weighted): 0.83588718632
-Accuracy score: 0.718046547119
-Report on floods :
+F1-score of positive classes: [ 0.97296238  0.        ]
+F1-score (micro): 0.947348340328
+F1-score (macro): 0.486481191223
+F1-score (weighted): 0.921734298211
+Accuracy score: 0.947348340328
+Report on electricity :
              precision    recall  f1-score   support
 
-          0       0.92      1.00      0.96      4826
-          1       0.00      0.00      0.00       416
+          0       0.98      1.00      0.99      5156
+          1       0.00      0.00      0.00        86
 
-avg / total       0.85      0.92      0.88      5242
+avg / total       0.97      0.98      0.98      5242
 
-F1-score of positive classes: [ 0.95868097]
-F1-score (micro): 0.958680969408
-F1-score (macro): 0.958680969408
-F1-score (weighted): 0.958680969408
-Accuracy score: 0.920640976726
-Report on storm :
+F1-score of positive classes: [ 0.99172918  0.        ]
+F1-score (micro): 0.983594048073
+F1-score (macro): 0.495864589344
+F1-score (weighted): 0.975458917458
+Accuracy score: 0.983594048073
+Report on tools :
              precision    recall  f1-score   support
 
-          0       0.90      1.00      0.95      4728
-          1       0.00      0.00      0.00       514
+          0       0.99      1.00      1.00      5206
+          1       0.00      0.00      0.00        36
 
-avg / total       0.81      0.90      0.86      5242
+avg / total       0.99      0.99      0.99      5242
 
-F1-score of positive classes: [ 0.94844534]
-F1-score (micro): 0.948445336008
-F1-score (macro): 0.948445336008
-F1-score (weighted): 0.948445336008
-Accuracy score: 0.901945822205
-Report on fire :
+F1-score of positive classes: [ 0.99655436  0.        ]
+F1-score (micro): 0.993132392217
+F1-score (macro): 0.498277182236
+F1-score (weighted): 0.989710419962
+Accuracy score: 0.993132392217
+Report on hospitals :
              precision    recall  f1-score   support
 
-          0       0.99      1.00      1.00      5190
-          1       0.00      0.00      0.00        52
+          0       0.99      1.00      1.00      5194
+          1       0.00      0.00      0.00        48
 
 avg / total       0.98      0.99      0.99      5242
 
-F1-score of positive classes: [ 0.99501534]
-F1-score (micro): 0.995015337423
-F1-score (macro): 0.995015337423
-F1-score (weighted): 0.995015337423
-Accuracy score: 0.990080122091
+F1-score of positive classes: [ 0.99540054  0.        ]
+F1-score (micro): 0.990843189622
+F1-score (macro): 0.497700268302
+F1-score (weighted): 0.986285842641
+Accuracy score: 0.990843189622
+Report on shops :
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      5217
+          1       0.00      0.00      0.00        25
+
+avg / total       0.99      1.00      0.99      5242
+
+F1-score of positive classes: [ 0.99760971  0.        ]
+F1-score (micro): 0.995230827928
+F1-score (macro): 0.498804857061
+F1-score (weighted): 0.992851941735
+Accuracy score: 0.995230827928
+Report on aid_centers :
+             precision    recall  f1-score   support
+
+          0       0.98      1.00      0.99      5163
+          1       0.00      0.00      0.00        79
+
+avg / total       0.97      0.98      0.98      5242
+
+F1-score of positive classes: [ 0.9924075  0.       ]
+F1-score (micro): 0.984929416253
+F1-score (macro): 0.496203748198
+F1-score (weighted): 0.977451336111
+Accuracy score: 0.984929416253
+Report on other_infrastructure :
+             precision    recall  f1-score   support
+
+          0       0.96      1.00      0.98      5008
+          1       0.00      0.00      0.00       234
+
+avg / total       0.91      0.96      0.93      5242
+
+F1-score of positive classes: [ 0.97717073  0.        ]
+F1-score (micro): 0.955360549409
+F1-score (macro): 0.488585365854
+F1-score (weighted): 0.93355036711
+Accuracy score: 0.955360549409
+Report on weather_related :
+             precision    recall  f1-score   support
+
+          0       0.73      1.00      0.84      3822
+          1       0.00      0.00      0.00      1420
+
+avg / total       0.53      0.73      0.61      5242
+
+F1-score of positive classes: [ 0.84333628  0.        ]
+F1-score (micro): 0.729111026326
+F1-score (macro): 0.421668137688
+F1-score (weighted): 0.614885777277
+Accuracy score: 0.729111026326
+Report on floods :
+             precision    recall  f1-score   support
+
+          0       0.92      1.00      0.96      4811
+          1       0.00      0.00      0.00       431
+
+avg / total       0.84      0.92      0.88      5242
+
+F1-score of positive classes: [ 0.95712723  0.        ]
+F1-score (micro): 0.917779473483
+F1-score (macro): 0.478563612852
+F1-score (weighted): 0.878431721263
+Accuracy score: 0.917779473483
+Report on storm :
+             precision    recall  f1-score   support
+
+          0       0.91      1.00      0.95      4759
+          1       0.00      0.00      0.00       483
+
+avg / total       0.82      0.91      0.86      5242
+
+F1-score of positive classes: [ 0.95170483  0.        ]
+F1-score (micro): 0.907859595574
+F1-score (macro): 0.475852414759
+F1-score (weighted): 0.864014361631
+Accuracy score: 0.907859595574
+Report on fire :
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      0.99      5189
+          1       0.00      0.00      0.00        53
+
+avg / total       0.98      0.99      0.98      5242
+
+F1-score of positive classes: [ 0.99491899  0.        ]
+F1-score (micro): 0.989889355208
+F1-score (macro): 0.497459495734
+F1-score (weighted): 0.984859718948
+Accuracy score: 0.989889355208
 Report on earthquake :
              precision    recall  f1-score   support
 
-          0       0.91      1.00      0.95      4773
-          1       0.00      0.00      0.00       469
+          0       0.91      1.00      0.95      4781
+          1       0.00      0.00      0.00       461
 
 avg / total       0.83      0.91      0.87      5242
 
-F1-score of positive classes: [ 0.95317024]
-F1-score (micro): 0.953170244633
-F1-score (macro): 0.953170244633
-F1-score (weighted): 0.953170244633
-Accuracy score: 0.910530331934
+F1-score of positive classes: [ 0.95400579  0.        ]
+F1-score (micro): 0.912056466997
+F1-score (macro): 0.477002893345
+F1-score (weighted): 0.870107147304
+Accuracy score: 0.912056466997
 Report on cold :
              precision    recall  f1-score   support
 
-          0       0.98      1.00      0.99      5136
-          1       0.00      0.00      0.00       106
+          0       0.98      1.00      0.99      5122
+          1       0.00      0.00      0.00       120
 
-avg / total       0.96      0.98      0.97      5242
+avg / total       0.95      0.98      0.97      5242
 
-F1-score of positive classes: [ 0.98978609]
-F1-score (micro): 0.989786085951
-F1-score (macro): 0.989786085951
-F1-score (weighted): 0.989786085951
-Accuracy score: 0.979778710416
+F1-score of positive classes: [ 0.98842146  0.        ]
+F1-score (micro): 0.977107974056
+F1-score (macro): 0.494210729448
+F1-score (weighted): 0.965794489215
+Accuracy score: 0.977107974056
 Report on other_weather :
              precision    recall  f1-score   support
 
-          0       0.94      1.00      0.97      4941
-          1       0.00      0.00      0.00       301
+          0       0.95      1.00      0.97      4977
+          1       0.00      0.00      0.00       265
 
-avg / total       0.89      0.94      0.91      5242
+avg / total       0.90      0.95      0.92      5242
 
-F1-score of positive classes: [ 0.97044093]
-F1-score (micro): 0.970440930963
-F1-score (macro): 0.970440930963
-F1-score (weighted): 0.970440930963
-Accuracy score: 0.942579168256
+F1-score of positive classes: [ 0.97406791  0.        ]
+F1-score (micro): 0.94944677604
+F1-score (macro): 0.487033956356
+F1-score (weighted): 0.924825639368
+Accuracy score: 0.94944677604
 Report on direct_report :
              precision    recall  f1-score   support
 
-          0       0.81      1.00      0.89      4238
-          1       0.00      0.00      0.00      1004
+          0       0.81      1.00      0.89      4227
+          1       0.00      0.00      0.00      1015
 
 avg / total       0.65      0.81      0.72      5242
 
-F1-score of positive classes: [ 0.89409283]
-F1-score (micro): 0.894092827004
-F1-score (macro): 0.894092827004
-F1-score (weighted): 0.894092827004
-Accuracy score: 0.808470049599
+F1-score of positive classes: [ 0.89280811  0.        ]
+F1-score (micro): 0.806371613888
+F1-score (macro): 0.446404055338
+F1-score (weighted): 0.719935117099
+Accuracy score: 0.806371613888
 Saving model...
     MODEL: models/lgbm_classifier.pkl
 Trained model saved!

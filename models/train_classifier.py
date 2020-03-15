@@ -1,4 +1,4 @@
-from lightgbm import LGBMClassifier
+#from lightgbm import LGBMClassifier
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
@@ -17,6 +17,9 @@ from sklearn.multioutput import MultiOutputClassifier
 from sklearn.pipeline import make_pipeline
 from sqlalchemy import create_engine
 import sys
+
+from skmultilearn.problem_transform import BinaryRelevance
+
 
 nltk.download('punkt')
 nltk.download('stopwords')
@@ -87,14 +90,14 @@ def build_model():
                     TfidfVectorizer(
                                     tokenizer=tokenize,
                                     smooth_idf=False),
-                    MultiOutputClassifier(
+                    BinaryRelevance(
                                     AdaBoostClassifier(),
                     n_jobs=-1))
 
-    parameters_dict = dict(multioutputclassifier__estimator__n_estimators=[20, 50, 200],
-                       multioutputclassifier__estimator__learning_rate=[0.01, 0.2])
+    parameters_dict = dict(multioutputclassifier__estimator__n_estimators=[20,],
+                       multioutputclassifier__estimator__learning_rate=[0.01])
 
-    model = GridSearchCV(pipeline, param_grid=parameters_dict, cv=5, verbose=3)
+    model = GridSearchCV(pipeline, param_grid=parameters_dict, cv=2, verbose=3)
 
     return model
 
