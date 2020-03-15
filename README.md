@@ -1,6 +1,6 @@
 # Overview dsend_project_2:
-- [Repository content](#Repository_content)
 - [Project summary](#Summary)
+- [Repository content](#Repository_content)
 - [Software requirements](#Software_requirements)
 - [How to run locally](#How_to_run)
 - [How to run locally in a Docker container](#How_to_run_with_docker)
@@ -127,3 +127,5 @@ Note: You can again load any other trained model as .pkl file with the entrypoin
 
 ## Acknowledgements & licensing:<a name="Acknowledgements"></a>
 Thanks to Figure Eight for their data on Twitter messages.
+
+Feel free to use this project, make changes and share your results!
