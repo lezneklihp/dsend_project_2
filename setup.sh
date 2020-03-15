@@ -1,3 +1,3 @@
 #!/bin/bash
-python webapp/run.py ada_classifier.pkl
+python app/run.py ada_2_classifier.pkl
 flask run --host 0.0.0.0
