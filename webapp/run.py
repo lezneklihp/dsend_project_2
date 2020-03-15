@@ -1,7 +1,10 @@
 from flask import Flask
 from flask import render_template, request, jsonify
 import json
-from nltk.stem import WordNetLemmatizer
+import nltk
+from nltk.corpus import stopwords
+from nltk.stem.porter import PorterStemmer
+from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 import pandas as pd
 import plotly
@@ -10,18 +13,56 @@ from sklearn.externals import joblib
 from sqlalchemy import create_engine
 import sys
 
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
+
 app = Flask(__name__)
 
-def tokenize(text):
-    tokens = word_tokenize(text)
-    lemmatizer = WordNetLemmatizer()
+# def tokenize(text):
+#     tokens = word_tokenize(text)
+#     lemmatizer = WordNetLemmatizer()
+#
+#     clean_tokens = []
+#     for tok in tokens:
+#         clean_tok = lemmatizer.lemmatize(tok).lower().strip()
+#         clean_tokens.append(clean_tok)
+#
+#     return clean_tokens
 
-    clean_tokens = []
-    for tok in tokens:
-        clean_tok = lemmatizer.lemmatize(tok).lower().strip()
-        clean_tokens.append(clean_tok)
+def tokenize(corpus):
+    """Tokenizes an English corpus (a text).
 
-    return clean_tokens
+    :param df: pandas.core.frame.DataFrame
+
+    :return: pandas.core.series.Series
+
+    >>> tokenized_words = tokenize(corpus)
+    """
+
+    # Normalize corpus
+    text = corpus.lower()
+
+    # Tokenize corpus; This will give us a list of lists of words
+    words_all = word_tokenize(text)
+
+    # Remove stop-words in the list of lists of words
+    words_all = [word for word in words_all if word not in stopwords.words('english')]
+
+    # Replace left-overs from colloquial abbreviations, such as in "you've"
+    left_overs = r'|'.join((r"'m", r"'s", r"n't", r"'d", r"'re", r"'ve", r"'t", r"'ll", r"'nt", r"'nt"))
+    words_all = re.sub(left_overs, "", str(words_all), flags=re.I)
+
+    # Replace all symbols
+    words_all = re.sub(r"[^a-zA-Z0-9]", " ", words_all, flags=re.I)
+
+    # Stem words
+    words_all = [PorterStemmer().stem(word) for word in words_all]
+
+    # Lemmatize words
+    words_all_new = [WordNetLemmatizer().lemmatize(word) for word in words_all]
+
+    return words_all_new
 
 # load data
 engine = create_engine('sqlite:///data/DisasterResponse.db')
@@ -55,6 +96,22 @@ def index():
     # TODO: Below is an example - modify to extract data for your own visuals
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
+
+    genre_aid_sum = df[['medical_help', 'medical_products',
+       'search_and_rescue', 'security', 'military', 'child_alone', 'water',
+       'food', 'shelter', 'clothing', 'money', 'missing_people', 'refugees',
+       'death', 'other_aid', 'transport',
+       'buildings', 'electricity', 'tools', 'hospitals', 'shops',
+       'aid_centers', 'other_infrastructure', 'floods',
+       'storm', 'fire', 'earthquake', 'cold', 'other_weather']].sum().sort_values(ascending=False)
+
+    aid_names = list(genre_aid_sum.index)
+
+    request_offer = df[["request", "offer"]].sum()
+    request_offer_name = list(request_offer.index)
+
+    related = df[["aid_related", "infrastructure_related", "weather_related"]].sum().sort_values(ascending=False)
+    related_name = list(related.index)
 
     # create visuals
     # TODO: Below is an example - modify to create your own visuals

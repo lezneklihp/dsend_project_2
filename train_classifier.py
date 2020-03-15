@@ -1,6 +1,7 @@
 from lightgbm import LGBMClassifier
 import nltk
 from nltk.corpus import stopwords
+from nltk.stem.porter import PorterStemmer
 from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 import numpy as np
@@ -8,7 +9,7 @@ import pandas as pd
 import pickle
 import re
 import sklearn
-from sklearn.ensemble import AdaBoostClassifier, RandomForestClassifier
+from sklearn.ensemble import AdaBoostClassifier
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import accuracy_score, classification_report, f1_score
 from sklearn.model_selection import GridSearchCV, train_test_split
@@ -16,7 +17,6 @@ from sklearn.multioutput import MultiOutputClassifier
 from sklearn.pipeline import make_pipeline
 from sqlalchemy import create_engine
 import sys
-from nltk.stem.porter import PorterStemmer
 
 nltk.download('punkt')
 nltk.download('stopwords')
@@ -96,7 +96,7 @@ def build_model():
 
     model = GridSearchCV(pipeline, param_grid=parameters_dict, cv=2, verbose=3, n_jobs=-1)
 
-    return model
+    return pipeline
 
 def evaluate_model(model, X_test, y_test, category_names):
     """Creates a report on how well the pipeline is able to categorize data.
