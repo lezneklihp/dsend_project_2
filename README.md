@@ -40,8 +40,19 @@ In a few words, here is what this project entails:
 - type in messages in the user interface & view categorization result
 - create Dockerfile to save others from having to adjust their Python development environment
 
+And here is how the Flask app looks like.
+
+Main page (top):
+![file1](https://github.com/lezneklihp/dsend_project_2/blob/master/app/screenshots/main_page_top.png)
+
+Main page (bottom):
+![file2](https://github.com/lezneklihp/dsend_project_2/blob/master/app/screenshots/main_page_bottom.png)
+
+Search results page:
+![file3](https://github.com/lezneklihp/dsend_project_2/blob/master/app/screenshots/search_result_page.png)
+
 ## Repository content:<a name="Repository_content"></a>
-This repository includes .csv, .db, .html, .pkl & .py files for the second project of the Udacity Data Scientist for Enterprise Nanodegree. In addition, there are .txt, .sh & a Dockerfile which were created to make this project more easily transferable to other machines.
+This repository includes .csv, .db, .html, .pkl, .png & .py files for the second project of the Udacity Data Scientist for Enterprise Nanodegree. In addition, there are .sh, .txt & a Dockerfile which were created to make this project more easily transferable to other machines.
 
 In "/data" there are all files needed for preparing data. In "/models" there are files for training classifiers. In "/app" there are files for running the Flask application. The other files in the root directory of this repository are used for creating a containerized version of the Flask app.
 
@@ -50,6 +61,10 @@ In "/data" there are all files needed for preparing data. In "/models" there are
 ├── README.md
 ├── app
 │   ├── run.py
+│   ├── screenshots
+│   │   ├── main_page_bottom.png
+│   │   ├── main_page_top.png
+│   │   └── search_result_page.png
 │   └── templates
 │       ├── go.html
 │       └── master.html

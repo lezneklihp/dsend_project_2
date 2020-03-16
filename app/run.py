@@ -88,6 +88,10 @@ model = load_model(classifier)
 @app.route('/index')
 def index():
 
+    # Data of original visualization
+    genre_counts = df.groupby('genre').count()['message']
+    genre_names = list(genre_counts.index)
+
     # Whether messages are related to disasters or not
     related_messages = df["related"].value_counts()
     related_messages_labels = ['related messages', 'not related messages']
@@ -111,6 +115,21 @@ def index():
     graphs = [
         {
             'data' : [
+                Pie(labels=genre_names,
+                    values=genre_counts,
+                    textinfo='percent',
+                    textposition='outside',
+                    hole=0.3)
+                ],
+            'layout' : {
+                'title' : 'Source of messages',
+                'titlefont' : {
+                            'size' : '24'
+                            }
+                    }
+        },
+        {
+            'data' : [
                 Pie(labels=related_messages_labels,
                     values=related_messages,
                     textinfo='percent',
@@ -118,7 +137,7 @@ def index():
                     hole=0.3)
                 ],
             'layout' : {
-                'title' : 'Messages related to disasters (count)',
+                'title' : 'Relevance of messages',
                 'titlefont' : {
                             'size' : '24'
                             }
@@ -133,7 +152,7 @@ def index():
                     hole=0.3)
                 ],
             'layout' : {
-                'title' : 'Themes of messages (count)',
+                'title' : 'Themes of messages',
                 'titlefont' : {
                             'size' : '24'
                             }
@@ -145,7 +164,7 @@ def index():
                     y=topics)
                 ],
             'layout' : {
-                'title' : 'Topics of messages (count)',
+                'title' : 'Topics of messages',
                 'titlefont' : {
                             'size' : '24'
                             },
@@ -175,10 +194,12 @@ def index():
 def go():
     # Save user input in query
     query = request.args.get('query', '')
+    app.logger.info('Text to be classified: {}'.format(query))
 
     # Use model to predict classification for query
     classification_labels = model.predict([query])[0]
-    classification_results = dict(zip(df.columns[4:], classification_labels))
+    app.logger.info('Classification into: {}'.format(classification_labels))
+    classification_results = dict(zip(df.columns[3:], classification_labels))
 
     # This will render the go.html Please see that file.
     return render_template(
