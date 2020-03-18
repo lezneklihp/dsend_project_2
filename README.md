@@ -11,7 +11,9 @@ Twitter allows its users to share concerns with the public. In the case of a dis
 
 The idea behind this project is thus to analyze text data & to categorize Twitter messages. Thereby rescuers can understand faster how to help people in need. This idea has been suggested originally by Figure Eight Inc.
 
-From a technical perspective, this is a multilabel classification task of a supervised machine learning problem. In such tasks, samples can fall into more than one category. Evaluating whether a model does this correctly then turns out to be more complex than relying on the accuracy metric only. High accuracy scores might mislead us here. Thus, we also need to take precision & recall into account. At this point, a differentiation between accuracy & precision will help us evaluate the quality of a model's classifications.
+From a technical perspective, this is a multilabel classification task of a supervised machine learning problem. In such tasks, samples can fall into more than one category. As an additional challenge in this project, the data set is highly imbalanced. There are categories which are addressed by very few messages (e.g., "search_and_rescue", n = 724 or 2.8%), whereas other categories are addressed by many messages (e.g., "aid_related", n = 10,878 or 41.5%). Techniques, such as oversampling, can help to balance a data set again, but require a lot of time for experimentation.
+
+Further, evaluating whether a model does a multilabel classification then turns out to be more complex. Relying on the accuracy metric only is not sufficient because high accuracy scores might mislead here. Thus, we also need to take precision & recall into account. At this point, a differentiation between accuracy & precision will help us evaluate the quality of a model's classifications.
 
 In a few words, here is what this project entails:
 
@@ -28,8 +30,8 @@ In a few words, here is what this project entails:
 2) Training classifiers:
 - load prepared data set
 - preprocess text data with normalization, tokenization, stop word removal, stemming & lemmatization
-- create machine learning pipeline with TF-IDF (i.e., proportional frequency of a word in a message), a classifier (here I used AdaBoost & LightGBM) & the MultiOutputClassifier (for multilabel classification)
-- with this pipeline, grid search for the best parameter setting for each classifier
+- create machine learning pipeline with TF-IDF (i.e., proportional frequency of a word in a message), a classifier (here I used AdaBoost or LightGBM) & the MultiOutputClassifier (for multilabel classification)
+- based on this pipeline, grid search for the best parameter setting for each classifier
 - evaluate classification results for each label with the F1-score
 - save classifier to .pkl file
 
@@ -76,7 +78,7 @@ In "/data" there are all files needed for preparing data. In "/models" there are
 ├── dockerfile
 ├── models
 │   ├── ada_classifier.pkl
-│   ├── ada_classifier_training_results.txt
+│   ├── ada_classifier_training_result.txt
 │   ├── lgbm_classifier.pkl
 │   ├── lgbm_classifier_training_result.txt
 │   └── train_classifier.py
@@ -85,7 +87,7 @@ In "/data" there are all files needed for preparing data. In "/models" there are
 ```
 
 ## Software requirements:<a name="Software_requirements"></a>
-Please use Python version 3.x & the following packages:
+Please use Python version 3.6x & the following packages:
 
 ```bash
 Flask==1.0
@@ -100,7 +102,7 @@ scipy==0.19.1
 SQLAlchemy==1.3.13
 ```
 
-I used [pip](https://pip.pypa.io/en/stable/) to install these packages.
+Otherwise you might run into errors due to deprecation. I used [pip](https://pip.pypa.io/en/stable/) to install these packages.
 
 ## How to run locally:<a name="How_to_run"></a>
 Clone this repository to a directory. Then change directory into the git repository. Let's call the directory of the git repository "home".
@@ -126,7 +128,7 @@ Note: You might need to adjust the paths to run these .py files. The third comma
 - "lgbm_classifier.pkl" for the LGBMClassifier
 
 ## How to run locally in a Docker container:<a name="How_to_run_with_docker"></a>
-If you want to run this app locally without (un-)installing current versions of Python packages on your machine, you can run the app inside a Docker container. Nonetheless, you will have to install Docker for this option in the first place.
+If you want to run this app locally without data preprocessing & without (un-)installing current versions of Python packages on your machine, you can run the app inside a Docker container. Nonetheless, you will have to install Docker for this option in the first place.
 
 Then clone this repository to a directory on your machine. Change directory to the git repository. There execute the following Docker commands to create a Docker image called "dsend-2" (or any other image name) in your terminal. If you don't want to access the Flask app on port 5001, specify a port to access the web app in a browser (e.g., Chrome). You will get your specific URL displayed in the terminal.
 

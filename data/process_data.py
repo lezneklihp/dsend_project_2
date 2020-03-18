@@ -2,6 +2,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 import sys
 
+
 def load_data(messages_filepath, categories_filepath):
     """Loads .csv files to the current working directory & merges them to a
     Pandas dataframe.
@@ -22,6 +23,7 @@ def load_data(messages_filepath, categories_filepath):
     df.info()
 
     return df_categories, df
+
 
 def clean_data(df_categories, df):
     """Extracts the information on disaster categories from a dataframe &
@@ -68,6 +70,7 @@ def clean_data(df_categories, df):
 
     return df
 
+
 def save_data(df, database_filename):
     """Loads a Pandas dataframe to a new SQLite database.
 
@@ -82,6 +85,7 @@ def save_data(df, database_filename):
 
     connection = create_engine(''.join(['sqlite:///', database_filename]))
     df.to_sql('categorized_messages', connection, if_exists='replace', index=False)
+
 
 def main():
     if len(sys.argv) == 4:
@@ -107,6 +111,7 @@ def main():
               'to as the third argument. \n\nExample: python data/process_data.py '\
               'data/disaster_messages.csv data/disaster_categories.csv '\
               'dta/DisasterResponse.db')
+
 
 if __name__ == '__main__':
     main()

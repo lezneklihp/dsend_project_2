@@ -22,6 +22,7 @@ nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
 
+
 def load_database_data(database_filename):
     """Loads data from a SQLite database to a Pandas dataframe & splits the data
     into features and targets.
@@ -40,6 +41,7 @@ def load_database_data(database_filename):
     category_names = list(y.columns)
 
     return X, y, category_names
+
 
 def tokenize(corpus):
     """Tokenizes an English corpus (a text).
@@ -75,6 +77,7 @@ def tokenize(corpus):
 
     return words_all_new
 
+
 def build_model():
     """Instantiates a machine learning pipeline with a AdaBoostClassifier.
 
@@ -97,6 +100,7 @@ def build_model():
     model = GridSearchCV(pipeline, param_grid=parameters_dict, cv=5, verbose=3)
 
     return model
+
 
 def evaluate_model(model, X_test, y_test, category_names):
     """Creates a report on how well the pipeline is able to categorize data.
@@ -128,7 +132,7 @@ def save_model(model, model_filepath):
     :param model: sklearn.pipeline.Pipeline
     :param model_filepath: str
 
-    >>> evaluate_model(model, 'models/classifier.pkl')
+    >>> save_model(model, 'models/classifier.pkl')
     """
 
     pickle.dump(model, open(model_filepath, 'wb'))

@@ -22,7 +22,9 @@ nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
 
+
 app = Flask(__name__)
+
 
 def tokenize(corpus):
     """Tokenizes an English corpus (a text).
@@ -58,12 +60,15 @@ def tokenize(corpus):
 
     return words_all_new
 
+
 # Load data
 engine = create_engine('sqlite:///data/DisasterResponse.db')
 df = pd.read_sql_table('categorized_messages', engine)
 
+
 # Parse argument for custom classifier
 classifier = sys.argv[1]
+
 
 # Load model
 def load_model(classifier):
@@ -80,8 +85,10 @@ def load_model(classifier):
 
     return model
 
+
 # Instantiate model with parsed custom classifier
 model = load_model(classifier)
+
 
 # index webpage displays cool visuals and receives user input text for model
 @app.route('/')
@@ -189,6 +196,7 @@ def index():
     # Render web page with plotly graphs
     return render_template('master.html', ids=ids, graphJSON=graphJSON)
 
+
 # Web page that handles user query and displays model results
 @app.route('/go')
 def go():
@@ -205,12 +213,13 @@ def go():
     return render_template(
         'go.html',
         query=query,
-        classification_result=classification_results
-    )
+        classification_result=classification_results)
+
 
 def main():
     print("Using the classifier saved in", ''.join(classifier), "to analyze new data.")
     app.run(host='0.0.0.0', port=3001, debug=True)
+
 
 if __name__ == '__main__':
     main()
